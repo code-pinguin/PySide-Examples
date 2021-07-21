@@ -2,10 +2,10 @@
 
 """PyQt4 port of the dialogs/findfiles example from Qt v4.x"""
 
-from PySide import QtCore, QtGui
+from PySide2 import QtCore, QtGui, QtWidgets
 
 
-class Window(QtGui.QDialog):
+class Window(QtWidgets.QDialog):
     def __init__(self, parent=None):
         super(Window, self).__init__(parent)
 
@@ -16,18 +16,18 @@ class Window(QtGui.QDialog):
         self.textComboBox = self.createComboBox()
         self.directoryComboBox = self.createComboBox(QtCore.QDir.currentPath())
 
-        fileLabel = QtGui.QLabel("Named:")
-        textLabel = QtGui.QLabel("Containing text:")
-        directoryLabel = QtGui.QLabel("In directory:")
-        self.filesFoundLabel = QtGui.QLabel()
+        fileLabel = QtWidgets.QLabel("Named:")
+        textLabel = QtWidgets.QLabel("Containing text:")
+        directoryLabel = QtWidgets.QLabel("In directory:")
+        self.filesFoundLabel = QtWidgets.QLabel()
 
         self.createFilesTable()
 
-        buttonsLayout = QtGui.QHBoxLayout()
+        buttonsLayout = QtWidgets.QHBoxLayout()
         buttonsLayout.addStretch()
         buttonsLayout.addWidget(self.findButton)
 
-        mainLayout = QtGui.QGridLayout()
+        mainLayout = QtWidgets.QGridLayout()
         mainLayout.addWidget(fileLabel, 0, 0)
         mainLayout.addWidget(self.fileComboBox, 0, 1, 1, 2)
         mainLayout.addWidget(textLabel, 1, 0)
@@ -117,9 +117,9 @@ class Window(QtGui.QDialog):
             file = QtCore.QFile(self.currentDir.absoluteFilePath(fn))
             size = QtCore.QFileInfo(file).size()
 
-            fileNameItem = QtGui.QTableWidgetItem(fn)
+            fileNameItem = QtWidgets.QTableWidgetItem(fn)
             fileNameItem.setFlags(fileNameItem.flags() ^ QtCore.Qt.ItemIsEditable)
-            sizeItem = QtGui.QTableWidgetItem("%d KB" % (int((size + 1023) / 1024)))
+            sizeItem = QtWidgets.QTableWidgetItem("%d KB" % (int((size + 1023) / 1024)))
             sizeItem.setTextAlignment(QtCore.Qt.AlignVCenter | QtCore.Qt.AlignRight)
             sizeItem.setFlags(sizeItem.flags() ^ QtCore.Qt.ItemIsEditable)
 
@@ -131,24 +131,24 @@ class Window(QtGui.QDialog):
         self.filesFoundLabel.setText("%d file(s) found (Double click on a file to open it)" % len(files))
 
     def createButton(self, text, member):
-        button = QtGui.QPushButton(text)
+        button = QtWidgets.QPushButton(text)
         button.clicked.connect(member)
         return button
 
     def createComboBox(self, text=""):
-        comboBox = QtGui.QComboBox()
+        comboBox = QtWidgets.QComboBox()
         comboBox.setEditable(True)
         comboBox.addItem(text)
-        comboBox.setSizePolicy(QtGui.QSizePolicy.Expanding,
-                QtGui.QSizePolicy.Preferred)
+        comboBox.setSizePolicy(QtWidgets.QSizePolicy.Expanding,
+                QtWidgets.QSizePolicy.Preferred)
         return comboBox
 
     def createFilesTable(self):
-        self.filesTable = QtGui.QTableWidget(0, 2)
-        self.filesTable.setSelectionBehavior(QtGui.QAbstractItemView.SelectRows)
+        self.filesTable = QtWidgets.QTableWidget(0, 2)
+        self.filesTable.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
 
         self.filesTable.setHorizontalHeaderLabels(("File Name", "Size"))
-        self.filesTable.horizontalHeader().setResizeMode(0, QtGui.QHeaderView.Stretch)
+        self.filesTable.horizontalHeader().setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
         self.filesTable.verticalHeader().hide()
         self.filesTable.setShowGrid(False)
 
@@ -164,7 +164,7 @@ if __name__ == '__main__':
 
     import sys
 
-    app = QtGui.QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
     window = Window()
     window.show()
     sys.exit(app.exec_())

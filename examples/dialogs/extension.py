@@ -2,14 +2,14 @@
 
 """PyQt4 port of the dialogs/extension example from Qt v4.x"""
 
-from PySide import QtCore, QtGui
+from PySide2 import QtCore, QtGui, QtWidgets
 
 
-class FindDialog(QtGui.QDialog):
+class FindDialog(QtWidgets.QDialog):
     def __init__(self, parent=None):
         super(FindDialog, self).__init__(parent)
 
-        label = QtGui.QLabel("Find &what:")
+        label = QtWidgets.QLabel("Find &what:")
         lineEdit = QtGui.QLineEdit()
         label.setBuddy(lineEdit)
 
@@ -17,16 +17,16 @@ class FindDialog(QtGui.QDialog):
         fromStartCheckBox = QtGui.QCheckBox("Search from &start")
         fromStartCheckBox.setChecked(True)
 
-        findButton = QtGui.QPushButton("&Find")
+        findButton = QtWidgets.QPushButton("&Find")
         findButton.setDefault(True)
 
-        moreButton = QtGui.QPushButton("&More")
+        moreButton = QtWidgets.QPushButton("&More")
         moreButton.setCheckable(True)
         moreButton.setAutoDefault(False)
 
-        buttonBox = QtGui.QDialogButtonBox(QtCore.Qt.Vertical)
-        buttonBox.addButton(findButton, QtGui.QDialogButtonBox.ActionRole)
-        buttonBox.addButton(moreButton, QtGui.QDialogButtonBox.ActionRole)
+        buttonBox = QtWidgets.QDialogButtonBox(QtCore.Qt.Vertical)
+        buttonBox.addButton(findButton, QtWidgets.QDialogButtonBox.ActionRole)
+        buttonBox.addButton(moreButton, QtWidgets.QDialogButtonBox.ActionRole)
 
         extension = QtGui.QWidget()
 
@@ -68,6 +68,6 @@ if __name__ == '__main__':
 
     import sys
 
-    app = QtGui.QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
     dialog = FindDialog()
     sys.exit(dialog.exec_())

@@ -2,14 +2,14 @@
 
 """PyQt4 port of the dialogs/trivialwizard example from Qt v4.x"""
 
-from PySide import QtGui
+from PySide2 import QtGui, QtWidgets
 
 
 def createIntroPage():
     page = QtGui.QWizardPage()
     page.setTitle("Introduction")
 
-    label = QtGui.QLabel("This wizard will help you register your copy of "
+    label = QtWidgets.QLabel("This wizard will help you register your copy of "
             "Super Product Two.")
     label.setWordWrap(True)
 
@@ -25,10 +25,10 @@ def createRegistrationPage():
     page.setTitle("Registration")
     page.setSubTitle("Please fill both fields.")
 
-    nameLabel = QtGui.QLabel("Name:")
+    nameLabel = QtWidgets.QLabel("Name:")
     nameLineEdit = QtGui.QLineEdit()
 
-    emailLabel = QtGui.QLabel("Email address:")
+    emailLabel = QtWidgets.QLabel("Email address:")
     emailLineEdit = QtGui.QLineEdit()
 
     layout = QtGui.QGridLayout()
@@ -45,7 +45,7 @@ def createConclusionPage():
     page = QtGui.QWizardPage()
     page.setTitle("Conclusion")
 
-    label = QtGui.QLabel("You are now successfully registered. Have a nice day!")
+    label = QtWidgets.QLabel("You are now successfully registered. Have a nice day!")
     label.setWordWrap(True)
 
     layout = QtGui.QVBoxLayout()
@@ -59,7 +59,7 @@ if __name__ == '__main__':
 
     import sys
 
-    app = QtGui.QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
 
     wizard = QtGui.QWizard()
     wizard.addPage(createIntroPage())

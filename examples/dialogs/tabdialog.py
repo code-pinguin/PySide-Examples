@@ -23,10 +23,10 @@
 ##
 #############################################################################
 
-from PySide import QtCore, QtGui
+from PySide2 import QtCore, QtGui, QtWidgets
 
 
-class TabDialog(QtGui.QDialog):
+class TabDialog(QtWidgets.QDialog):
     def __init__(self, fileName, parent=None):
         super(TabDialog, self).__init__(parent)
 
@@ -37,7 +37,7 @@ class TabDialog(QtGui.QDialog):
         tabWidget.addTab(PermissionsTab(fileInfo), "Permissions")
         tabWidget.addTab(ApplicationsTab(fileInfo), "Applications")
 
-        buttonBox = QtGui.QDialogButtonBox(QtGui.QDialogButtonBox.Ok | QtGui.QDialogButtonBox.Cancel)
+        buttonBox = QtWidgets.QDialogButtonBox(QtWidgets.QDialogButtonBox.Ok | QtWidgets.QDialogButtonBox.Cancel)
 
         buttonBox.accepted.connect(self.accept)
         buttonBox.rejected.connect(self.reject)
@@ -54,24 +54,24 @@ class GeneralTab(QtGui.QWidget):
     def __init__(self, fileInfo, parent=None):
         super(GeneralTab, self).__init__(parent)
 
-        fileNameLabel = QtGui.QLabel("File Name:")
+        fileNameLabel = QtWidgets.QLabel("File Name:")
         fileNameEdit = QtGui.QLineEdit(fileInfo.fileName())
 
-        pathLabel = QtGui.QLabel("Path:")
-        pathValueLabel = QtGui.QLabel(fileInfo.absoluteFilePath())
+        pathLabel = QtWidgets.QLabel("Path:")
+        pathValueLabel = QtWidgets.QLabel(fileInfo.absoluteFilePath())
         pathValueLabel.setFrameStyle(QtGui.QFrame.Panel | QtGui.QFrame.Sunken)
 
-        sizeLabel = QtGui.QLabel("Size:")
+        sizeLabel = QtWidgets.QLabel("Size:")
         size = fileInfo.size() // 1024
-        sizeValueLabel = QtGui.QLabel("%d K" % size)
+        sizeValueLabel = QtWidgets.QLabel("%d K" % size)
         sizeValueLabel.setFrameStyle(QtGui.QFrame.Panel | QtGui.QFrame.Sunken)
 
-        lastReadLabel = QtGui.QLabel("Last Read:")
-        lastReadValueLabel = QtGui.QLabel(fileInfo.lastRead().toString())
+        lastReadLabel = QtWidgets.QLabel("Last Read:")
+        lastReadValueLabel = QtWidgets.QLabel(fileInfo.lastRead().toString())
         lastReadValueLabel.setFrameStyle(QtGui.QFrame.Panel | QtGui.QFrame.Sunken)
 
-        lastModLabel = QtGui.QLabel("Last Modified:")
-        lastModValueLabel = QtGui.QLabel(fileInfo.lastModified().toString())
+        lastModLabel = QtWidgets.QLabel("Last Modified:")
+        lastModValueLabel = QtWidgets.QLabel(fileInfo.lastModified().toString())
         lastModValueLabel.setFrameStyle(QtGui.QFrame.Panel | QtGui.QFrame.Sunken)
 
         mainLayout = QtGui.QVBoxLayout()
@@ -109,12 +109,12 @@ class PermissionsTab(QtGui.QWidget):
 
         ownerGroup = QtGui.QGroupBox("Ownership")
 
-        ownerLabel = QtGui.QLabel("Owner")
-        ownerValueLabel = QtGui.QLabel(fileInfo.owner())
+        ownerLabel = QtWidgets.QLabel("Owner")
+        ownerValueLabel = QtWidgets.QLabel(fileInfo.owner())
         ownerValueLabel.setFrameStyle(QtGui.QFrame.Panel | QtGui.QFrame.Sunken)
 
-        groupLabel = QtGui.QLabel("Group")
-        groupValueLabel = QtGui.QLabel(fileInfo.group())
+        groupLabel = QtWidgets.QLabel("Group")
+        groupValueLabel = QtWidgets.QLabel(fileInfo.group())
         groupValueLabel.setFrameStyle(QtGui.QFrame.Panel | QtGui.QFrame.Sunken)
 
         permissionsLayout = QtGui.QVBoxLayout()
@@ -141,7 +141,7 @@ class ApplicationsTab(QtGui.QWidget):
     def __init__(self, fileInfo, parent=None):
         super(ApplicationsTab, self).__init__(parent)
 
-        topLabel = QtGui.QLabel("Open with:")
+        topLabel = QtWidgets.QLabel("Open with:")
 
         applicationsListBox = QtGui.QListWidget()
         applications = []
@@ -171,7 +171,7 @@ if __name__ == '__main__':
 
     import sys
 
-    app = QtGui.QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
 
     if len(sys.argv) >= 2:
         fileName = sys.argv[1]

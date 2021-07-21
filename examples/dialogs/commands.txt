@@ -1,0 +1,100 @@
+ 2059  git push
+ 2060  git config --list
+ 2061  ls
+ 2062  python3 -m venv venv
+ 2063  source venv/bin/activate
+ 2064  pip3 install PySide2
+ 2065  cd examples/
+ 2066  ls
+ 2067  cd dialogs
+ 2068  ls
+ 2069  python3 findfiles
+ 2070  python3 findfiles.py
+ 2071  vim findfiles.py
+ 2072  python3 findfiles.py
+ 2073  pip3 freeze
+ 2074  cd tutorial
+ 2075  ls
+ 2076  cd ..
+ 2077  cd dialogs
+ 2078  ls
+ 2079  less extension.py 
+ 2080  grep PySide *
+ 2081  sed /PySide/PySide/g
+ 2082  sed /s/PySide/PySide2/g
+ 2083  sed '/s/PySide/PySide2/g'
+ 2084  sed -e '/s/PySide/PySide2/g'
+ 2085  sed '/s/PySide/PySide2/g' *
+ 2086  grep PySide | sed '/s/PySide/PySide2/g'
+ 2087  sed -i '/s/PySide/PySide2/g' extension.py 
+ 2088  sed -i 's/PySide/PySide2/g' extension.py 
+ 2089  sed -i 's/PySide/PySide2/g' findfiles_test.py 
+ 2090  sed -i 's/PySide/PySide2/g' standarddialogs.py 
+ 2091  sed -i 's/PySide/PySide2/g' tabdialog.py 
+ 2092  sed -i 's/PySide/PySide2/g' trivialwizard.py 
+ 2093  grep PySide *
+ 2094  python3
+ 2095  python3 -c "from PySide2 import QtCore, QtGuid"
+ 2096  python3 -c "from PySide2 import QtCore, QtGui"
+ 2097  ls
+ 2098  python3 findfiles.py
+ 2099  python3 -c "from PySid2.QtWidgets import QDialog"
+ 2100  python3 -c "from PySide2.QtWidgets import QDialog"
+ 2101  grep QtGui.QtDialog *
+ 2102  grep "QtGui.QDialog" *
+ 2103  sed -i 's/QtGui.QDialog/QtWidgets.QDialog/g *.py
+ 2104  sed -i 's/QtGui.QDialog/QtWidgets.QDialog/g' *.py
+ 2105  grep "QtGui.QDialog" *
+ 2106  grep QDialog *
+ 2107  grep PySide2 *
+ 2108  grep "^from" *.py
+ 2109  sed 's/import QtGuid$/ &, QtWidgets/g *
+ 2110  sed 's/import QtGuid$/ &, QtWidgets/g' *
+ 2111  sed 's/import QtGuid$/ &, QtWidgets/g' .py
+ 2112  sed 's/import QtGuid$/ &, QtWidgets/g' *.py
+ 2113  sed 's/import QtGuid$/ &QtWidgets/g' *.py
+ 2114  clear
+ 2115  sed 's/import QtGuid$/ &QtWidgets/g' findfiles.py
+ 2116  clear
+ 2117  sed '/^from PySide2/ s/$/, QtWidgets/g' findfiles.py
+ 2118  sed -i '/^from PySide2/ s/$/, QtWidgets/g' *.py
+ 2119  grep QtWidget *.py
+ 2120  python3 findfiles.py
+ 2121  grep QtGui.QApplication *.py
+ 2122  sed -i 's/QtGui.QApplication/QtWidgets.QApplication/g' *.py
+ 2123  python3 findfiles.py
+ 2124  sed -i 's/QtGui.QPushButton/QtWidgets.QPushButton/g' *.py
+ 2125  python3 findfiles.py
+ 2126  sed -i 's/QtGui.QComboBox/QtWidgets.QComboBox/g' *.py
+ 2127  python3 findfiles.py
+ 2128  sed -i 's/QtGui.QSizePolicy/QtWidgets.QSizePolicy/g' *.py
+ 2129  python3 findfiles.py
+ 2130  sed -i 's/QtGui.QLabel/QtWidgets.QLabel/g' *.py
+ 2131  python3 findfiles.py
+ 2132  sed -i 's/QtGui.QTableWidget/QtWidgets.QTableWidget/g' *.py
+ 2133  python3 findfiles.py
+ 2134  sed -i 's/QtGui.QAbstractionItemView/QtWidgets.QAbstractionItemView/g' *.py
+ 2135  python3 findfiles.py
+ 2136  sed -i 's/QtGui.QAbstractionItemView/QtWidgets.QAbstractionItemView/g' *.py
+ 2137  python3 findfiles.py
+ 2138  sed -i 's/QtGui.QAbstractionItemView/QtWidgets.QAbstractionItemView/g' findfiles.py
+ 2139  python3 findfiles.py
+ 2140  sed -i 's/QtGui.QAbstractItemView/QtWidgets.QAbstractItemView/g' findfiles.py
+ 2141  python3 findfiles.py
+ 2142  sed -i 's/QtGui.QHeaderView/QtWidgets.QHeaderView/g' findfiles.py
+ 2143  python3 findfiles.py
+ 2144  grep "setResizeMode" findfiles.py
+ 2145  sed -i 's/setResizeMode/setSectionResizeMode' findfiles.py
+ 2146  sed -i 's/setResizeMode/setSectionResizeMode/g' findfiles.py
+ 2147  python3 findfiles.py
+ 2148  sed -i 's/QtGui.QHBoxLayout/QtWidgets.QHBoxLayout/g' findfiles.py
+ 2149  python3 findfiles.py
+ 2150  sed -i 's/QtGui.QGridLayout/QtWidgets.QGridLayout/g' findfiles.py
+ 2151  python3 findfiles.py
+ 2152  git status
+ 2153  git add -A
+ 2154  history
+ 2155  history | less 100
+ 2156  history | tail 100
+ 2157  history | tail -100
+ 2158  history | tail -100 > commands.txt

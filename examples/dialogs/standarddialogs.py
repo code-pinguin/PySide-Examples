@@ -7,10 +7,10 @@
 #sip.setapi('QString', 2)
 
 import sys
-from PySide import QtCore, QtGui
+from PySide2 import QtCore, QtGui, QtWidgets
 
 
-class Dialog(QtGui.QDialog):
+class Dialog(QtWidgets.QDialog):
     MESSAGE = "<p>Message boxes have a caption, a text, and up to three " \
             "buttons, each with standard or custom texts.</p>" \
             "<p>Click a button to close the message box. Pressing the Esc " \
@@ -25,65 +25,65 @@ class Dialog(QtGui.QDialog):
 
         frameStyle = QtGui.QFrame.Sunken | QtGui.QFrame.Panel
 
-        self.integerLabel = QtGui.QLabel()
+        self.integerLabel = QtWidgets.QLabel()
         self.integerLabel.setFrameStyle(frameStyle)
-        self.integerButton = QtGui.QPushButton("QInputDialog.get&Integer()")
+        self.integerButton = QtWidgets.QPushButton("QInputDialog.get&Integer()")
 
-        self.doubleLabel = QtGui.QLabel()
+        self.doubleLabel = QtWidgets.QLabel()
         self.doubleLabel.setFrameStyle(frameStyle)
-        self.doubleButton = QtGui.QPushButton("QInputDialog.get&Double()")
+        self.doubleButton = QtWidgets.QPushButton("QInputDialog.get&Double()")
 
-        self.itemLabel = QtGui.QLabel()
+        self.itemLabel = QtWidgets.QLabel()
         self.itemLabel.setFrameStyle(frameStyle)
-        self.itemButton = QtGui.QPushButton("QInputDialog.getIte&m()")
+        self.itemButton = QtWidgets.QPushButton("QInputDialog.getIte&m()")
 
-        self.textLabel = QtGui.QLabel()
+        self.textLabel = QtWidgets.QLabel()
         self.textLabel.setFrameStyle(frameStyle)
-        self.textButton = QtGui.QPushButton("QInputDialog.get&Text()")
+        self.textButton = QtWidgets.QPushButton("QInputDialog.get&Text()")
 
-        self.colorLabel = QtGui.QLabel()
+        self.colorLabel = QtWidgets.QLabel()
         self.colorLabel.setFrameStyle(frameStyle)
-        self.colorButton = QtGui.QPushButton("QColorDialog.get&Color()")
+        self.colorButton = QtWidgets.QPushButton("QColorDialog.get&Color()")
 
-        self.fontLabel = QtGui.QLabel()
+        self.fontLabel = QtWidgets.QLabel()
         self.fontLabel.setFrameStyle(frameStyle)
-        self.fontButton = QtGui.QPushButton("QFontDialog.get&Font()")
+        self.fontButton = QtWidgets.QPushButton("QFontDialog.get&Font()")
 
-        self.directoryLabel = QtGui.QLabel()
+        self.directoryLabel = QtWidgets.QLabel()
         self.directoryLabel.setFrameStyle(frameStyle)
-        self.directoryButton = QtGui.QPushButton("QFileDialog.getE&xistingDirectory()")
+        self.directoryButton = QtWidgets.QPushButton("QFileDialog.getE&xistingDirectory()")
 
-        self.openFileNameLabel = QtGui.QLabel()
+        self.openFileNameLabel = QtWidgets.QLabel()
         self.openFileNameLabel.setFrameStyle(frameStyle)
-        self.openFileNameButton = QtGui.QPushButton("QFileDialog.get&OpenFileName()")
+        self.openFileNameButton = QtWidgets.QPushButton("QFileDialog.get&OpenFileName()")
 
-        self.openFileNamesLabel = QtGui.QLabel()
+        self.openFileNamesLabel = QtWidgets.QLabel()
         self.openFileNamesLabel.setFrameStyle(frameStyle)
-        self.openFileNamesButton = QtGui.QPushButton("QFileDialog.&getOpenFileNames()")
+        self.openFileNamesButton = QtWidgets.QPushButton("QFileDialog.&getOpenFileNames()")
 
-        self.saveFileNameLabel = QtGui.QLabel()
+        self.saveFileNameLabel = QtWidgets.QLabel()
         self.saveFileNameLabel.setFrameStyle(frameStyle)
-        self.saveFileNameButton = QtGui.QPushButton("QFileDialog.get&SaveFileName()")
+        self.saveFileNameButton = QtWidgets.QPushButton("QFileDialog.get&SaveFileName()")
 
-        self.criticalLabel = QtGui.QLabel()
+        self.criticalLabel = QtWidgets.QLabel()
         self.criticalLabel.setFrameStyle(frameStyle)
-        self.criticalButton = QtGui.QPushButton("QMessageBox.critica&l()")
+        self.criticalButton = QtWidgets.QPushButton("QMessageBox.critica&l()")
 
-        self.informationLabel = QtGui.QLabel()
+        self.informationLabel = QtWidgets.QLabel()
         self.informationLabel.setFrameStyle(frameStyle)
-        self.informationButton = QtGui.QPushButton("QMessageBox.i&nformation()")
+        self.informationButton = QtWidgets.QPushButton("QMessageBox.i&nformation()")
 
-        self.questionLabel = QtGui.QLabel()
+        self.questionLabel = QtWidgets.QLabel()
         self.questionLabel.setFrameStyle(frameStyle)
-        self.questionButton = QtGui.QPushButton("QMessageBox.&question()")
+        self.questionButton = QtWidgets.QPushButton("QMessageBox.&question()")
 
-        self.warningLabel = QtGui.QLabel()
+        self.warningLabel = QtWidgets.QLabel()
         self.warningLabel.setFrameStyle(frameStyle)
-        self.warningButton = QtGui.QPushButton("QMessageBox.&warning()")
+        self.warningButton = QtWidgets.QPushButton("QMessageBox.&warning()")
 
-        self.errorLabel = QtGui.QLabel()
+        self.errorLabel = QtWidgets.QLabel()
         self.errorLabel.setFrameStyle(frameStyle)
-        self.errorButton = QtGui.QPushButton("QErrorMessage.show&M&essage()")
+        self.errorButton = QtWidgets.QPushButton("QErrorMessage.show&M&essage()")
 
         self.integerButton.clicked.connect(self.setInteger)
         self.doubleButton.clicked.connect(self.setDouble)
@@ -278,6 +278,6 @@ class Dialog(QtGui.QDialog):
 
 
 if __name__ == '__main__':
-    app = QtGui.QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
     dialog = Dialog()
     sys.exit(dialog.exec_())
