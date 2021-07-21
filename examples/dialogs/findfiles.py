@@ -44,7 +44,7 @@ class Window(QtWidgets.QDialog):
         self.resize(500, 300)
 
     def browse(self):
-        directory = QtGui.QFileDialog.getExistingDirectory(self, "Find Files",
+        directory = QtWidgets.QFileDialog.getExistingDirectory(self, "Find Files",
                 QtCore.QDir.currentPath())
 
         if directory:

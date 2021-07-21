@@ -98,3 +98,18 @@
  2156  history | tail 100
  2157  history | tail -100
  2158  history | tail -100 > commands.txt
+ 2160  git status
+ 2161  git add commands.txt 
+ 2162  git status
+ 2163  git commit -m "Convert codes from PySide to PySide2"
+ 2164  git push
+ 2165  python3 findfiles.py
+ 2166  sed -i 's/QtGui.QFileDialog/QtWidgets.QFileDialog/g' findfiles.py | tee -a commands.txt 
+ 2167  python3 findfiles.py
+ 2168  tail commands.txt 
+ 2169  cat commands.txt 
+ 2170  history | tail -1
+ 2171  history | tail -2
+ 2172  history
+ 2173  history | tail -10
+ 2174  history | tail -15 >> commands.txt 
